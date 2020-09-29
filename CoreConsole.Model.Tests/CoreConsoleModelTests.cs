@@ -4,8 +4,7 @@ using Xunit;
 namespace CoreConsole.Model.Tests
 {
     public class CoreConsoleModelTests
-    {
-        {
+    {        
         [Fact]
         public void PersonConstructor()
         {
