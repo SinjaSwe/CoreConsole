@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CoreConsole; 
 
 namespace CoreConsole.Model
 {
-    /* TO DO:
-
-             c.UsePropertiesto prevent namesfromsavingNULL & Empty
-             d.Unittest Personclass.
-             e.Commitchanges. 
-    */
     public class Person
     {
-
         //personId(intand readonly), 
         private static int counter = 0;
         public static int Counter { get { return counter; } }
 
         //RequiredPrivateFields
-
         int personId;
         string firstname;
         string lastname;
@@ -37,9 +30,14 @@ namespace CoreConsole.Model
             get { return firstname; }
             set
             {
-                if (value == null)
+                if (string.IsNullOrWhiteSpace(value))
+
                 {
-                    firstname = "enter firstname here";
+                    throw new ArgumentException("Lastname is null, empty or consists only of white space.");
+                }
+                else
+                {
+                    firstname = value;
                 }
             }
         }
@@ -49,9 +47,13 @@ namespace CoreConsole.Model
             get { return lastname; }
             set
             {
-                if (value == null)
+                if (string.IsNullOrWhiteSpace(value))
                 {
-                    lastname = "enter lastname here";
+                    throw new ArgumentException("Lastname is null, empty or consists only of white space.");
+                }
+                else
+                {
+                    lastname = value;
                 }
             }
         }
