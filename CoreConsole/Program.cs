@@ -20,6 +20,13 @@ namespace CoreConsole
             {
                 Console.WriteLine(aPerson.PersonInformation());
             }
+
+            List<ToDo> toDos = new List<ToDo>();
+            Console.WriteLine("Amount of to dos: " + Person.Counter);
+
+
+
+
         }
     }
 }
